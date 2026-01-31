@@ -190,28 +190,28 @@
 
 ### Quality Gate Framework
 
-- [ ] T069 [US4] Create quality gate runner framework in ai_sprint/services/quality_gates.py
-- [ ] T070 [US4] Implement linting gate (ruff integration) in ai_sprint/services/quality_gates.py
-- [ ] T071 [US4] Implement type checking gate (mypy integration) in ai_sprint/services/quality_gates.py
-- [ ] T072 [US4] Implement complexity gate (radon integration, max 15 cyclomatic) in ai_sprint/services/quality_gates.py
+- [X] T069 [US4] Create quality gate runner framework in ai_sprint/services/quality_gates.py
+- [X] T070 [US4] Implement linting gate (ruff integration) in ai_sprint/services/quality_gates.py
+- [X] T071 [US4] Implement type checking gate (mypy integration) in ai_sprint/services/quality_gates.py
+- [X] T072 [US4] Implement complexity gate (radon integration, max 15 cyclomatic) in ai_sprint/services/quality_gates.py
 
 ### Test Quality Gates
 
-- [ ] T073 [US4] Implement coverage gate (pytest-cov, min 80%) in ai_sprint/services/quality_gates.py
-- [ ] T074 [US4] Implement mutation testing gate (mutmut, min 80%) in ai_sprint/services/quality_gates.py
+- [X] T073 [US4] Implement coverage gate (pytest-cov, min 80%) in ai_sprint/services/quality_gates.py
+- [X] T074 [US4] Implement mutation testing gate (mutmut, min 80%) in ai_sprint/services/quality_gates.py
 
 ### Security Gates
 
-- [ ] T075 [US4] Implement SAST gate (semgrep integration) in ai_sprint/services/quality_gates.py
-- [ ] T076 [US4] Implement dependency scan gate (trivy integration) in ai_sprint/services/quality_gates.py
-- [ ] T077 [US4] Implement secret detection gate (trufflehog integration) in ai_sprint/services/quality_gates.py
+- [X] T075 [US4] Implement SAST gate (semgrep integration) in ai_sprint/services/quality_gates.py
+- [X] T076 [US4] Implement dependency scan gate (trivy integration) in ai_sprint/services/quality_gates.py
+- [X] T077 [US4] Implement secret detection gate (trufflehog integration) in ai_sprint/services/quality_gates.py
 
 ### Gate Integration
 
-- [ ] T078 [US4] Integrate quality gates into CAB agent (InReview stage) in ai_sprint/core/cab.py
-- [ ] T079 [US4] Integrate test gates into Tester agent (InTests stage) in ai_sprint/core/tester.py
-- [ ] T080 [US4] Integrate security gates into Refinery agent (pre-merge) in ai_sprint/core/refinery.py
-- [ ] T081 [US4] Implement specific rejection messages per gate failure in ai_sprint/services/quality_gates.py
+- [X] T078 [US4] Integrate quality gates into CAB agent (InReview stage) in ai_sprint/core/cab.py
+- [X] T079 [US4] Integrate test gates into Tester agent (InTests stage) in ai_sprint/core/tester.py
+- [X] T080 [US4] Integrate security gates into Refinery agent (pre-merge) in ai_sprint/core/refinery.py
+- [X] T081 [US4] Implement specific rejection messages per gate failure in ai_sprint/services/quality_gates.py
 
 **Checkpoint**: User Story 4 complete - quality gates enforce code standards
 
