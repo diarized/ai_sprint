@@ -261,10 +261,10 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T097 [P] Create health-check.sh quick validation script in scripts/health-check.sh
-- [ ] T098 [P] Add pyproject.toml entry points for `ai-sprint` command
-- [ ] T099 Run quickstart.md validation (manual verification of all install/run steps)
-- [ ] T100 Final code cleanup and docstring review
+- [X] T097 [P] Create health-check.sh quick validation script in scripts/health-check.sh
+- [X] T098 [P] Add pyproject.toml entry points for `ai-sprint` command
+- [X] T099 Run quickstart.md validation (manual verification of all install/run steps)
+- [X] T100 Final code cleanup and docstring review
 
 ---
 

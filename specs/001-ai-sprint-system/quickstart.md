@@ -121,22 +121,12 @@ cd my-project
 
 Or create them manually following the templates.
 
-### 2. Validate Feature
+### 2. Start Implementation
 
-```bash
-# Dry run to check for issues
-ai-sprint start specs/001-my-feature --dry-run
+Note: AI Sprint validates the feature automatically on start.
+If validation fails, the feature won't start and you'll get specific error messages.
 
-# Expected output:
-# ✓ Feature validated: 001-my-feature
-# ✓ 3 convoys detected (15 tasks)
-# ✓ No file conflicts found
-# ✓ Dependencies valid
-#
-# Ready to start. Run without --dry-run to begin.
-```
-
-### 3. Start Implementation
+### 3. Launch the Feature
 
 ```bash
 # Start the feature
@@ -213,17 +203,20 @@ ai-sprint start specs/001-my-feature
 ### Viewing Logs
 
 ```bash
-# All logs
-ai-sprint logs all
+# List all available logs
+ai-sprint logs --list
+
+# Main application log
+ai-sprint logs
 
 # Specific agent
-ai-sprint logs dev-001
+ai-sprint logs manager
 
 # Follow mode
 ai-sprint logs manager --follow
 
 # Last hour only
-ai-sprint logs all --since 1h
+ai-sprint logs manager --since 1h
 ```
 
 ### Changing Configuration
