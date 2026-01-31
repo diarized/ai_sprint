@@ -225,33 +225,33 @@
 
 ### Installation Script
 
-- [ ] T082 [US5] Create system dependency checker script in scripts/install.sh
-- [ ] T083 [US5] Implement `ai-sprint install` command in ai_sprint/cli/commands/install.py
-- [ ] T084 [US5] Implement database initialization on first run in ai_sprint/cli/commands/install.py
-- [ ] T085 [US5] Implement config directory creation (~/.ai-sprint/) in ai_sprint/cli/commands/install.py
+- [X] T082 [US5] Create system dependency checker script in scripts/install.sh
+- [X] T083 [US5] Implement `ai-sprint install` command in ai_sprint/cli/commands/install.py
+- [X] T084 [US5] Implement database initialization on first run in ai_sprint/cli/commands/install.py
+- [X] T085 [US5] Implement config directory creation (~/.ai-sprint/) in ai_sprint/cli/commands/install.py
 
 ### Health Check
 
-- [ ] T086 [US5] Implement `ai-sprint health [--fix] [--json]` command in ai_sprint/cli/commands/health.py
-- [ ] T087 [US5] Implement dependency version checking in ai_sprint/cli/commands/health.py
-- [ ] T088 [US5] Implement optional tool detection (mutmut, semgrep, trivy) in ai_sprint/cli/commands/health.py
+- [X] T086 [US5] Implement `ai-sprint health [--fix] [--json]` command in ai_sprint/cli/commands/health.py
+- [X] T087 [US5] Implement dependency version checking in ai_sprint/cli/commands/health.py
+- [X] T088 [US5] Implement optional tool detection (mutmut, semgrep, trivy) in ai_sprint/cli/commands/health.py
 
 ### Configuration Management
 
-- [ ] T089 [US5] Implement `ai-sprint config show` command in ai_sprint/cli/commands/config.py
-- [ ] T090 [US5] Implement `ai-sprint config set <key> <value>` command in ai_sprint/cli/commands/config.py
-- [ ] T091 [US5] Implement `ai-sprint config reset` command in ai_sprint/cli/commands/config.py
+- [X] T089 [US5] Implement `ai-sprint config show` command in ai_sprint/cli/commands/config.py
+- [X] T090 [US5] Implement `ai-sprint config set <key> <value>` command in ai_sprint/cli/commands/config.py
+- [X] T091 [US5] Implement `ai-sprint config reset` command in ai_sprint/cli/commands/config.py
 
 ### Logging
 
-- [ ] T092 [US5] Implement `ai-sprint logs <agent>` command in ai_sprint/cli/commands/logs.py
-- [ ] T093 [US5] Implement log filtering (--tail, --follow, --since) in ai_sprint/cli/commands/logs.py
+- [X] T092 [US5] Implement `ai-sprint logs <agent>` command in ai_sprint/cli/commands/logs.py
+- [X] T093 [US5] Implement log filtering (--tail, --follow, --since) in ai_sprint/cli/commands/logs.py
 
 ### Documentation
 
-- [ ] T094 [P] [US5] Create docs/installation.md
-- [ ] T095 [P] [US5] Create docs/configuration.md
-- [ ] T096 [P] [US5] Create docs/architecture.md
+- [X] T094 [P] [US5] Create docs/installation.md
+- [X] T095 [P] [US5] Create docs/configuration.md
+- [X] T096 [P] [US5] Create docs/architecture.md
 
 **Checkpoint**: User Story 5 complete - system installable from GitHub
 

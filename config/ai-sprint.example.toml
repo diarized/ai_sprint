@@ -1,0 +1,38 @@
+# AI Sprint Configuration Example
+# Copy to ~/.ai-sprint/ai-sprint.toml and customize
+
+[general]
+database_path = "~/.ai-sprint/beads.db"
+log_level = "INFO"  # DEBUG, INFO, WARNING, ERROR
+log_file = "~/.ai-sprint/logs/ai-sprint.log"
+
+[agents]
+max_developers = 3  # Maximum parallel developer agents (1-10)
+max_testers = 3     # Maximum parallel tester agents (1-10)
+polling_interval_seconds = 30  # How often manager polls for work
+
+[timeouts]
+agent_heartbeat_seconds = 60       # Health check interval
+agent_hung_seconds = 300           # 5 minutes = agent is hung
+task_max_duration_seconds = 7200   # 2 hours max per task
+merge_timeout_seconds = 300        # 5 minutes for merge operations
+
+[quality]
+coverage_threshold = 80       # Minimum test coverage percent
+mutation_threshold = 80       # Minimum mutation score percent
+complexity_flag = 10          # Flag functions above this complexity
+complexity_max = 15           # Block functions above this complexity
+
+[security]
+critical_cve_max = 0   # Zero tolerance for critical CVEs
+high_cve_max = 0       # Zero tolerance for high CVEs
+medium_cve_max = 5     # Allow up to 5 medium CVEs with justification
+
+[models]
+# Agent model assignments: haiku (fast/cheap), sonnet (balanced), opus (powerful/expensive)
+manager = "haiku"      # High-frequency orchestration
+cab = "haiku"          # High-frequency code review routing
+refinery = "sonnet"    # Complex merge operations
+librarian = "sonnet"   # Documentation generation
+developer = "sonnet"   # Implementation work
+tester = "haiku"       # Validation and test execution
