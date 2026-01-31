@@ -61,3 +61,6 @@ Thumbs.db
 # AI Sprint specific
 .ai-sprint/
 worktrees/
+
+# Beads issue tracking (local workflow tool)
+.beads/

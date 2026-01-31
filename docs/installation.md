@@ -366,7 +366,7 @@ rm -rf ~/.ai-sprint
 
 After installation:
 
-1. **Read the quickstart guide**: `docs/quickstart.md`
+1. **Read the quickstart guide**: `docs/installation.md`
 2. **Understand the architecture**: `docs/architecture.md`
 3. **Learn configuration options**: `docs/configuration.md`
 4. **Start your first feature**: `ai-sprint start <feature-dir>`
