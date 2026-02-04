@@ -8,6 +8,7 @@ from rich.console import Console
 from rich.table import Table
 
 console = Console()
+console_err = Console(stderr=True)
 
 
 def error(message: str) -> None:
@@ -17,7 +18,7 @@ def error(message: str) -> None:
     Args:
         message: Error message to display
     """
-    console.print(f"[red]✗ Error:[/red] {message}", stderr=True)
+    console_err.print(f"[red]✗ Error:[/red] {message}")
     raise click.Abort()
 
 
