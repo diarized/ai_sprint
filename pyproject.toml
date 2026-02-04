@@ -24,6 +24,7 @@ dependencies = [
     "click>=8.0",
     "gitpython>=3.1",
     "libtmux>=0.37",
+    "psutil>=5.9",
     "pydantic>=2.0",
     "pydantic-settings>=2.0",
     "rich>=13.0",
