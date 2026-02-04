@@ -68,10 +68,50 @@ ai-sprint health
 
 ### Basic Usage
 
-```bash
-# Start feature development
-ai-sprint start <feature-directory>
+**CRITICAL:** You must run `ai-sprint start` from inside the Git repository you want to develop.
 
+#### Step 1: Prepare Feature Specification
+
+Create a feature directory with required files:
+
+```bash
+mkdir -p ~/feature-specs/my-feature
+cd ~/feature-specs/my-feature
+
+# Create required files (AI Sprint will read these)
+touch spec.md    # Feature specification
+touch plan.md    # Implementation plan
+touch tasks.md   # Task breakdown
+```
+
+#### Step 2: Start AI Sprint
+
+Navigate to the repository you want to develop and start AI Sprint:
+
+```bash
+# Go to YOUR repository (NOT the AI Sprint repository)
+cd ~/path/to/your/project
+
+# Start AI Sprint with path to feature specs
+ai-sprint start ~/feature-specs/my-feature
+```
+
+**Example:** To develop WebIMAP project:
+
+```bash
+cd ~/Scripts/Python/src/WebIMAP/src
+ai-sprint start ~/feature-specs/webimap-feature
+```
+
+AI Sprint will:
+- Use the current directory (`.`) as the Git repository
+- Create worktrees in `./worktrees/` for isolated development
+- Read specs from `~/feature-specs/webimap-feature/`
+- Implement changes in your repository
+
+#### Other Commands
+
+```bash
 # Check system status
 ai-sprint status
 

@@ -366,10 +366,24 @@ rm -rf ~/.ai-sprint
 
 After installation:
 
-1. **Read the quickstart guide**: `docs/installation.md`
-2. **Understand the architecture**: `docs/architecture.md`
-3. **Learn configuration options**: `docs/configuration.md`
-4. **Start your first feature**: `ai-sprint start <feature-dir>`
+1. **Read the architecture guide**: `docs/architecture.md`
+2. **Learn configuration options**: `docs/configuration.md`
+3. **Start your first feature**:
+
+```bash
+# Create feature specification directory
+mkdir -p ~/feature-specs/my-feature
+cd ~/feature-specs/my-feature
+touch spec.md plan.md tasks.md
+
+# Navigate to YOUR Git repository (the code you want to develop)
+cd ~/path/to/your/project
+
+# Start AI Sprint (it will use current directory as the repository)
+ai-sprint start ~/feature-specs/my-feature
+```
+
+**CRITICAL:** Run `ai-sprint start` from INSIDE the Git repository you want to develop, not from the AI Sprint installation directory
 
 ---
 
