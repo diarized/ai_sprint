@@ -34,8 +34,8 @@ Complete installation instructions for AI Sprint system.
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/ai-sprint.git
-cd ai-sprint
+git clone git@github.com:diarized/ai_sprint.git
+cd ai_sprint
 
 # Install in editable mode
 pip install -e .
@@ -72,8 +72,8 @@ ai-sprint install
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/ai-sprint.git
-cd ai-sprint
+git clone git@github.com:diarized/ai_sprint.git
+cd ai_sprint
 
 # Create virtual environment
 python3 -m venv .venv
@@ -375,7 +375,8 @@ After installation:
 
 ## Support
 
-- **GitHub Issues**: https://github.com/yourusername/ai-sprint/issues
-- **Documentation**: https://github.com/yourusername/ai-sprint/docs
+- **GitHub Repository**: https://github.com/diarized/ai_sprint
+- **GitHub Issues**: https://github.com/diarized/ai_sprint/issues
+- **Documentation**: https://github.com/diarized/ai_sprint/tree/master/docs
 - **Health Check**: `ai-sprint health --json`
 - **Logs**: `ai-sprint logs --tail 50`
