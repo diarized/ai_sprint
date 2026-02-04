@@ -9,7 +9,7 @@ from rich.console import Console
 from rich.syntax import Syntax
 from rich.table import Table
 
-from ai_sprint.utils.logging import setup_logging
+from ai_sprint.utils.logging import get_logger, setup_logging
 
 console = Console()
 
@@ -71,7 +71,8 @@ def config() -> None:
 )
 def show(section: str | None) -> None:
     """Display current configuration."""
-    logger = setup_logging()
+    setup_logging()
+    logger = get_logger(__name__)
 
     try:
         config_data = load_config()
@@ -126,7 +127,8 @@ def set_value(key: str, value: str) -> None:
         ai-sprint config set quality.coverage_threshold 85
         ai-sprint config set models.developer sonnet
     """
-    logger = setup_logging()
+    setup_logging()
+    logger = get_logger(__name__)
 
     try:
         # Parse key
@@ -231,7 +233,8 @@ def reset(confirm: bool) -> None:
 
     WARNING: This will overwrite your current configuration file.
     """
-    logger = setup_logging()
+    setup_logging()
+    logger = get_logger(__name__)
 
     try:
         config_path = get_config_path()

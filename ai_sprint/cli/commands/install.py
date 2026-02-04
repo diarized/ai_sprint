@@ -10,7 +10,7 @@ from rich.console import Console
 
 from ai_sprint.config.settings import Settings
 from ai_sprint.services.state_manager import get_db, initialize_database
-from ai_sprint.utils.logging import setup_logging
+from ai_sprint.utils.logging import get_logger, setup_logging
 
 console = Console()
 
@@ -29,7 +29,8 @@ console = Console()
 )
 def install(config_dir: str | None, force: bool) -> None:
     """Initialize AI Sprint system (database, config directory)."""
-    logger = setup_logging()
+    setup_logging()
+    logger = get_logger(__name__)
 
     try:
         # Determine config directory

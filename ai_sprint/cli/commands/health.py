@@ -12,7 +12,7 @@ from rich.table import Table
 
 from ai_sprint.config.settings import Settings
 from ai_sprint.services.state_manager import get_db
-from ai_sprint.utils.logging import setup_logging
+from ai_sprint.utils.logging import get_logger, setup_logging
 
 console = Console()
 
@@ -108,7 +108,8 @@ def check_python_packages(packages: list[str]) -> dict[str, dict]:
 )
 def health(fix: bool, json_output: bool) -> None:
     """Check system health and dependency status."""
-    logger = setup_logging()
+    setup_logging()
+    logger = get_logger(__name__)
 
     try:
         health_data = {

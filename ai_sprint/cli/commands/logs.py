@@ -8,7 +8,7 @@ from pathlib import Path
 import click
 from rich.console import Console
 
-from ai_sprint.utils.logging import setup_logging
+from ai_sprint.utils.logging import get_logger, setup_logging
 
 console = Console()
 
@@ -134,7 +134,8 @@ def logs(
         ai-sprint logs --since 1h       # Last hour of logs
         ai-sprint logs --list           # List available logs
     """
-    logger = setup_logging()
+    setup_logging()
+    logger = get_logger(__name__)
 
     try:
         log_dir = Path.home() / ".ai-sprint" / "logs"
