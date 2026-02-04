@@ -28,66 +28,106 @@ Complete installation instructions for AI Sprint system.
 
 ## Installation Methods
 
-### Method 1: pip (Recommended)
+**CRITICAL CONCEPT:** AI Sprint is a CLI tool (like git or pytest). You install it ONCE in an isolated environment, then use it from ANY project directory.
 
-**For development/editable install:**
+### Method 1: pipx (Recommended for End Users)
 
-```bash
-# Clone repository
-git clone git@github.com:diarized/ai_sprint.git
-cd ai_sprint
-
-# Install in editable mode
-pip install -e .
-
-# Initialize system
-ai-sprint install
-```
-
-**For production install (when published to PyPI):**
-
-```bash
-# Install from PyPI
-pip install ai-sprint
-
-# Initialize system
-ai-sprint install
-```
-
-### Method 2: pipx (Isolated Environment)
+**Best for:** Using AI Sprint as a tool (not modifying ai-sprint code itself)
 
 ```bash
 # Install pipx if not already installed
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 
-# Install AI Sprint
+# Install AI Sprint (creates isolated environment automatically)
 pipx install ai-sprint
 
 # Initialize system
 ai-sprint install
+
+# Usage: ai-sprint is now available globally
+cd ~/your-project/
+ai-sprint start ~/feature-specs/my-feature/
 ```
 
-### Method 3: From Source (Development)
+**Why pipx?** Automatically manages isolated Python environment. No venv activation needed.
+
+---
+
+### Method 2: Manual venv (For Development/Testing)
+
+**Best for:** Modifying ai-sprint code or testing unreleased versions
 
 ```bash
 # Clone repository
 git clone git@github.com:diarized/ai_sprint.git
 cd ai_sprint
 
-# Create virtual environment
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+# Create dedicated virtual environment
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
-pip install -r requirements.txt
-
-# Install package in editable mode
+# Install in editable mode (changes to code take effect immediately)
 pip install -e .
 
 # Initialize system
 ai-sprint install
 ```
+
+**Important:** You must activate this venv EVERY TIME you want to use `ai-sprint`:
+
+```bash
+# Activate ai-sprint venv
+source /path/to/ai_sprint/venv/bin/activate
+
+# Navigate to YOUR project (different directory)
+cd ~/your-project/
+
+# Run ai-sprint
+ai-sprint start ~/feature-specs/my-feature/
+```
+
+---
+
+### Method 3: PyPI (Future - Not Yet Available)
+
+**When published to PyPI:**
+
+```bash
+pip install ai-sprint
+ai-sprint install
+```
+
+---
+
+## Understanding Environments
+
+**AI Sprint uses TWO separate environments:**
+
+### 1. AI Sprint Environment (Tool Installation)
+- **Purpose:** Where the `ai-sprint` CLI is installed
+- **Location:** `/path/to/ai_sprint/venv/` or managed by pipx
+- **Must be active:** YES (when running `ai-sprint` commands)
+
+### 2. Your Project Environment (What You're Developing)
+- **Purpose:** Your project's dependencies (if any)
+- **Location:** `~/your-project/.venv/` (if it exists)
+- **Relevant to ai-sprint:** NO (ai-sprint doesn't use it)
+
+**Example workflow:**
+
+```bash
+# Activate AI Sprint environment (Method 2 users only; pipx users skip this)
+source /tmp/ai_sprint/venv/bin/activate
+
+# Navigate to YOUR project directory
+cd ~/repositories/NewTwitter/
+
+# Run ai-sprint (it will develop NewTwitter, not ai_sprint)
+ai-sprint start ~/feature-specs/twitter-auth/
+```
+
+**Common mistake:** Running `ai-sprint` without activating the ai-sprint venv results in "command not found"
 
 ---
 

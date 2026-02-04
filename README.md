@@ -51,24 +51,53 @@ Quality Gates → Review → Merge → Documentation → Deployment
 
 ### Installation
 
+**Recommended: pipx (isolated, no venv management needed)**
+
 ```bash
-# Clone repository
+# Install pipx
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+
+# Install AI Sprint
+pipx install ai-sprint
+ai-sprint install
+ai-sprint health
+```
+
+**Alternative: Development install (requires venv activation)**
+
+```bash
+# Clone and setup
 git clone git@github.com:diarized/ai_sprint.git
 cd ai_sprint
+python3 -m venv venv
+source venv/bin/activate
 
 # Install in editable mode
 pip install -e .
-
-# Initialize system
 ai-sprint install
-
-# Verify installation
 ai-sprint health
+```
+
+**Important:** If using venv method, activate it before running `ai-sprint`:
+```bash
+source /path/to/ai_sprint/venv/bin/activate
 ```
 
 ### Basic Usage
 
-**CRITICAL:** You must run `ai-sprint start` from inside the Git repository you want to develop.
+**CRITICAL REQUIREMENTS:**
+1. AI Sprint venv must be active (if using venv install method; pipx users skip this)
+2. Run `ai-sprint start` from inside the Git repository you want to develop
+
+#### Step 0: Activate AI Sprint Environment (venv users only)
+
+```bash
+# If you installed with Method 2 (venv), activate it first
+source /path/to/ai_sprint/venv/bin/activate
+
+# pipx users skip this step - ai-sprint is always available
+```
 
 #### Step 1: Prepare Feature Specification
 
