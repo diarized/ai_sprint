@@ -81,7 +81,7 @@ AI Sprint is a multi-agent orchestration system that autonomously implements sof
 
 #### Manager Agent (`manager.py`)
 
-**Permanent**: Yes | **Count**: 1 | **Model**: Haiku
+**Permanent**: Yes | **Count**: 1 | **Model**: Opus
 
 **Responsibilities:**
 - Poll database for ready features
@@ -148,7 +148,7 @@ Poll → Create Convoys → Spawn Agents → Monitor Health → Cleanup
 
 #### Developer Agent (`developer.py`)
 
-**Permanent**: No | **Count**: 0-3 (configurable) | **Model**: Sonnet/Opus
+**Permanent**: No | **Count**: 0-3 (configurable) | **Model**: Sonnet (default)
 
 **Responsibilities:**
 - Claim available convoy (atomic SQL transaction)

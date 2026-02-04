@@ -255,7 +255,7 @@ high_cve_max = 0
 medium_cve_max = 5
 
 [models]
-manager = "haiku"
+manager = "opus"
 cab = "haiku"
 refinery = "sonnet"
 librarian = "sonnet"

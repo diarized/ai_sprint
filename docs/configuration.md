@@ -259,7 +259,7 @@ Controls which Claude models each agent uses.
 
 ```toml
 [models]
-manager = "haiku"
+manager = "opus"
 cab = "haiku"
 refinery = "sonnet"
 librarian = "sonnet"
@@ -267,14 +267,14 @@ developer = "sonnet"
 tester = "haiku"
 ```
 
-| Agent | Default Model | Purpose | Recommended |
-|-------|---------------|---------|-------------|
-| `manager` | `haiku` | Task orchestration | haiku (fast) |
-| `cab` | `haiku` | Code review routing | haiku (sufficient) |
-| `refinery` | `sonnet` | Merge decisions | sonnet (accuracy) |
-| `librarian` | `sonnet` | Documentation | sonnet (quality) |
-| `developer` | `sonnet` | Implementation | sonnet/opus |
-| `tester` | `haiku` | Test validation | haiku (sufficient) |
+| Agent | Default Model | Purpose | Why This Model |
+|-------|---------------|---------|----------------|
+| `manager` | `opus` | Early planning, convoy creation | Critical bottleneck: parses tasks, creates work units |
+| `cab` | `haiku` | Code review routing | Simple linting/type check validation |
+| `refinery` | `sonnet` | Merge decisions | Accuracy for security gates and conflicts |
+| `librarian` | `sonnet` | Documentation | Quality writing and technical clarity |
+| `developer` | `sonnet` | Code implementation | Balanced quality/cost, high-frequency agent (0-3 concurrent) |
+| `tester` | `haiku` | Test validation | Coverage checks, sufficient for validation |
 
 **Available Models:**
 - `haiku`: Fast, low-cost, good for simple tasks
@@ -294,23 +294,23 @@ tester = "haiku"
 
 **Quality Optimization:**
 ```toml
-# Maximize quality (expensive, highest accuracy)
-manager = "haiku"      # Orchestration doesn't need opus
+# Maximize quality (very expensive, highest accuracy)
+manager = "opus"       # Critical planning decisions
 cab = "sonnet"
-refinery = "sonnet"
-librarian = "sonnet"
-developer = "opus"     # Best implementation quality
+refinery = "opus"      # Best merge conflict resolution
+librarian = "opus"     # Highest quality documentation
+developer = "opus"     # WARNING: Very expensive (0-3 concurrent agents)
 tester = "sonnet"
 ```
 
-**Balanced (Recommended):**
+**Balanced (Recommended - Default):**
 ```toml
 # Best cost/quality ratio
-manager = "haiku"
+manager = "opus"       # Critical: early planning decisions
 cab = "haiku"
 refinery = "sonnet"
 librarian = "sonnet"
-developer = "sonnet"
+developer = "sonnet"   # High-frequency agent, sonnet is cost-effective
 tester = "haiku"
 ```
 
