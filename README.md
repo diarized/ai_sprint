@@ -78,11 +78,18 @@ Create a feature directory with required files:
 mkdir -p ~/feature-specs/my-feature
 cd ~/feature-specs/my-feature
 
-# Create required files (AI Sprint will read these)
-touch spec.md    # Feature specification
-touch plan.md    # Implementation plan
-touch tasks.md   # Task breakdown
+# spec.md - MUST contain feature name as first heading
+echo "# My Feature Name" > spec.md
+
+# plan.md and tasks.md - required to exist but never read (can be empty)
+touch plan.md
+touch tasks.md
 ```
+
+**What AI Sprint actually reads:**
+- `spec.md` - Extracts feature name from first `# heading`
+- `plan.md` - Never read (existence checked only)
+- `tasks.md` - Never read (parser not implemented, TODO)
 
 #### Step 2: Start AI Sprint
 

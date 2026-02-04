@@ -374,7 +374,13 @@ After installation:
 # Create feature specification directory
 mkdir -p ~/feature-specs/my-feature
 cd ~/feature-specs/my-feature
-touch spec.md plan.md tasks.md
+
+# spec.md - MUST contain feature name as first heading
+echo "# My Feature Name" > spec.md
+
+# plan.md and tasks.md - required to exist but never read (can be empty)
+touch plan.md
+touch tasks.md
 
 # Navigate to YOUR Git repository (the code you want to develop)
 cd ~/path/to/your/project
@@ -382,6 +388,8 @@ cd ~/path/to/your/project
 # Start AI Sprint (it will use current directory as the repository)
 ai-sprint start ~/feature-specs/my-feature
 ```
+
+**Note:** Only `spec.md` is actually read (for feature name extraction). The `plan.md` and `tasks.md` parsers are not yet implemented but files must exist for validation.
 
 **CRITICAL:** Run `ai-sprint start` from INSIDE the Git repository you want to develop, not from the AI Sprint installation directory
 
