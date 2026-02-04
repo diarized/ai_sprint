@@ -66,7 +66,6 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_prefix="AI_SPRINT_",
         env_nested_delimiter="__",
-        toml_file="~/.ai-sprint/ai-sprint.toml",
         extra="ignore",
     )
 

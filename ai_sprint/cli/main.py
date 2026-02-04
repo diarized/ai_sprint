@@ -1,6 +1,11 @@
 """Main CLI entry point for AI Sprint."""
 
+import warnings
+
 import click
+
+# Suppress pydantic UserWarnings during normal usage
+warnings.filterwarnings("ignore", category=UserWarning, module="pydantic_settings")
 
 from ai_sprint import __version__
 from ai_sprint.cli.commands.config import config
